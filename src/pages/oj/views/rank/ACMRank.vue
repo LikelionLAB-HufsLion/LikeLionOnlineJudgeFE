@@ -2,7 +2,7 @@
   <Row type="flex" justify="space-around">
     <Col :span="22">
     <Panel :padding="10">
-      <div slot="title">ACM Ranklist</div>
+        <div slot="title"><Strong>ACM 랭킹</Strong></div>
       <div class="echarts">
         <ECharts :options="options" ref="chart" auto-resize></ECharts>
       </div>
@@ -42,7 +42,7 @@
             }
           },
           {
-            title: 'user',
+            title: '이름',
             align: 'center',
             render: (h, params) => {
               return h('a', {
@@ -63,22 +63,22 @@
             }
           },
           {
-            title: 'mood',
+            title: '학교',
             align: 'center',
             key: 'mood'
           },
           {
-            title: 'AC',
+            title: '푼 문제 수',
             align: 'center',
             key: 'accepted_number'
           },
           {
-            title: 'Total',
+            title: '건드린 문제 수',
             align: 'center',
             key: 'submission_number'
           },
           {
-            title: 'Rating',
+            title: '정답률',
             align: 'center',
             render: (h, params) => {
               return h('span', utils.getACRate(params.row.accepted_number, params.row.submission_number))

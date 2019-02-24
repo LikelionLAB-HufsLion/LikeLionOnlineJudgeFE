@@ -103,7 +103,7 @@
     computed: {
       title () {
         if (this.listVisible) {
-          return this.isContest ? '대회 공지사항' : '공지사항'
+          return this.isContest ? '대회 공지사항' : 'LikeLion Online Judge'
         } else {
           return this.announcement.title
         }

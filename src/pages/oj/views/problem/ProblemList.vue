@@ -110,7 +110,7 @@
             }
           },
           {
-            title: 'Title',
+            title: '문제',
             width: 400,
             render: (h, params) => {
               return h('Button', {
@@ -133,7 +133,7 @@
             }
           },
           {
-            title: 'Level',
+            title: '난이도',
             render: (h, params) => {
               let t = params.row.difficulty
               let color = 'blue'
@@ -147,11 +147,11 @@
             }
           },
           {
-            title: 'Total',
+            title: '제출 총합',
             key: 'submission_number'
           },
           {
-            title: 'AC Rate',
+            title: '정답률',
             render: (h, params) => {
               return h('span', this.getACRate(params.row.accepted_number, params.row.submission_number))
             }

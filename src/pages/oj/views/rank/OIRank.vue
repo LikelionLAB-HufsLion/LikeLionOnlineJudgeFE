@@ -2,7 +2,7 @@
   <Row type="flex" justify="space-around">
     <Col :span="22">
     <Panel :padding="10">
-      <div slot="title">OI Ranklist</div>
+      <div slot="title">OI 랭킹</div>
       <div class="echarts">
         <ECharts :options="options" ref="chart" auto-resize></ECharts>
       </div>
@@ -41,7 +41,7 @@
             }
           },
           {
-            title: 'user',
+            title: '사용자',
             align: 'center',
             render: (h, params) => {
               return h('a', {
@@ -62,27 +62,27 @@
             }
           },
           {
-            title: 'mood',
+            title: '상태',
             align: 'center',
             key: 'mood'
           },
           {
-            title: 'Score',
+            title: '점수',
             align: 'center',
             key: 'total_score'
           },
           {
-            title: 'AC',
+            title: '정답률',
             align: 'center',
-            key: 'accepted_number'
+            key: 'accepted_numr'
           },
           {
-            title: 'Total',
+            title: '해결한 문제',
             align: 'center',
             key: 'submission_number'
           },
           {
-            title: 'Rating',
+            title: '랭킹',
             align: 'center',
             render: (h, params) => {
               return h('span', utils.getACRate(params.row.accepted_number, params.row.submission_number))

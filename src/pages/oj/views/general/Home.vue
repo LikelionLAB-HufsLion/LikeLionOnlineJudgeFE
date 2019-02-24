@@ -1,4 +1,4 @@
-<template>
+ <template>
   <Row type="flex" justify="space-around">
     <Col :span="22">
     <panel shadow v-if="contests.length" class="contest">
@@ -26,21 +26,40 @@
         </CarouselItem>
       </Carousel>
     </panel>
+
+  
+    <Carousel></Carousel>
+    <ACMrank></ACMrank>
+    <Table :data="dataRank" :columns="columns" :loading="loadingTable" size="large"></Table>
     <Announcements class="announcement"></Announcements>
+    
+
     </Col>
   </Row>
 </template>
 
 <script>
   import Announcements from './Announcements.vue'
+  // Vue bootstrap 사용 위한 import
+  import Vue from 'vue'
+  import BootstrapVue from 'bootstrap-vue'
+  import 'bootstrap/dist/css/bootstrap.css'
+  import 'bootstrap-vue/dist/bootstrap-vue.css'
+  // Carousel.vue file
+  import Carousel from './Carousel.vue'
+  // ACMRANK.vue file
+  import ACMRank from '../rank/ACMRank.vue'
   import api from '@oj/api'
   import time from '@/utils/time'
   import { CONTEST_STATUS } from '@/utils/constants'
-
+  
+  Vue.use(BootstrapVue)
   export default {
     name: 'home',
     components: {
-      Announcements
+      Announcements,
+      Carousel,
+      ACMRank
     },
     data () {
       return {

@@ -7,8 +7,8 @@
       </transition>
       <div class="footer">
         <p v-html="website.website_footer"></p>
-        <p>Copyright &copy; 2018. <a href="https://github.com/LikelionLAB-HufsLion/Project-OnlineJudge">HUFS-Online Judge Co. All right reserved.</a>
-          <span v-if="version">&nbsp; Version: {{ version }}</span>
+        <p>Copyright &copy; 2019 <a href="https://www.facebook.com/hufslikelion/">외대 멋사</a>
+          <span v-if="version">&nbsp;Version: {{ version }}</span>
         </p>
       </div>
     </div>
@@ -19,7 +19,6 @@
 <script>
   import { mapActions, mapState } from 'vuex'
   import NavBar from '@oj/components/NavBar.vue'
-
   export default {
     name: 'app',
     components: {

@@ -1,9 +1,7 @@
 <template>
   <div id="header">
     <Menu theme="light" mode="horizontal" @on-select="handleRoute" :active-name="activeMenu" class="oj-menu">
-      <div class="logo">
-        <span><img height="10%" width="10%" align="middle" src="../../../assets/hufs.gif"/> HUFS-Online Judge</span>
-       </div>
+        <div class="logo"><span><Strong>LIKELION</Strong></span></div>
       <Menu-item name="/">
         <Icon type="home"></Icon>
         {{$t('m.Home')}}
@@ -50,6 +48,7 @@
                   ref="loginBtn"
                   shape="circle"
                   @click="handleBtnClick('login')">{{$t('m.Login')}}
+                  
           </Button>
           <Button v-if="website.allow_register"
                   type="ghost"
@@ -75,7 +74,7 @@
       </template>
     </Menu>
     <Modal v-model="modalVisible" :width="400">
-      <div slot="header" class="modal-title">Welcome to {{website.website_name_shortcut}}</div>
+      <div slot="header" class="modal-title">멋사 알고리즘 채점 사이트</div>
       <component :is="modalStatus.mode" v-if="modalVisible"></component>
       <div slot="footer" style="display: none"></div>
     </Modal>
@@ -86,7 +85,6 @@
   import { mapGetters, mapActions } from 'vuex'
   import login from '@oj/views/user/Login'
   import register from '@oj/views/user/Register'
-
   export default {
     components: {
       login,
@@ -141,17 +139,17 @@
     background-color: #fff;
     box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.1);
     .oj-menu {
-      background: #fdfdfd;
+      background: white;
     }
 
     .logo {
       margin-left: 2%;
       margin-right: 2%;
-      font-size: 20px;
+      font-size: 25px;
+      color: orange; /* 여기를 통해서 LIKELION 디자인 한다.*/
       float: left;
       line-height: 60px;
     }
-
     .drop-menu {
       float: right;
       margin-right: 30px;
@@ -162,9 +160,10 @@
       }
     }
     .btn-menu {
-      font-size: 16px;
+      font-size: 20px;
       float: right;
       margin-right: 10px;
+      font-weight: bold;
     }
   }
 
